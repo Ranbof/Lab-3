@@ -73,3 +73,8 @@ if __name__ == "__main__":
         print(f"RMSE: {rmse:.2f}")
         print(f"MAE: {mae:.2f}")
         print(f"R2: {r2:.2f}")
+
+        model_path = os.path.join("mlruns", mlflow.active_run().info.run_id, "artifacts", "model")
+        with open("best_model.txt", "w") as f:
+            f.write(model_path)
+        mlflow.log_artifact("best_model.txt")
