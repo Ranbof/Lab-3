@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 def download_data():
     df = pd.read_csv('https://raw.githubusercontent.com/Ranbof/Data-lab-3/refs/heads/main/taxi_dataset.csv')
