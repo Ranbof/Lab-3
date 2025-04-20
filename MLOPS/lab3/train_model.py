@@ -8,6 +8,11 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from mlflow.models import infer_signature
 import joblib
 
+import os
+
+if not os.path.exists('taxi_features.csv') or not os.path.exists('taxi_target.csv'):
+    raise FileNotFoundError("Required CSV files not found")
+
 def scale_data(X, y):
     scaler = StandardScaler()
     power_trans = PowerTransformer()
